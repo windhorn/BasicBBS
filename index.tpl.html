@@ -1,0 +1,45 @@
+<?php
+  include_once("post.php");
+?>
+<html >
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>掲示板</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="row">
+        <div class="col-md-4">
+          <div class="inputform">
+            <form action="index.php" method="post">
+              名前: <br><input type="text" name="name" value="" /><br>
+              タイトル: <br><input type="text" name="title" value="" /><br>
+              本文: <br><textarea type="text" name="body" rows="10" cols="40"></textarea><br>
+              <button type='submit' class='btn btn-sm btn-default'>投稿</button>
+            </form>
+            <?php if ($this->error) {?>
+              <div class='alert alert-warning'><?php echo $this->error ?></div>
+            <?php } elseif (isset($_GET['delete'])) { ?>
+              <div class='alert alert-warning'>削除しました.</div>
+              <?php } ?>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <?php foreach ($this->posts as $post) { ?>
+            <div class="kadomaru">
+              <p>投稿ID: <?php echo $post->getId(); ?></p>
+              <p>投稿者: <?php echo $post->getName(); ?></p>
+              <p>タイトル: <?php echo $post->getTitle(); ?></p>
+              <p>本文: <?php echo $post->getBody(); ?></p>
+              <p>投稿日時: <?php echo $post->getPost_date(); ?></p>
+              <a href='edit.php?id=<?php echo $post->getId(); ?>'><button type='button' class='btn btn-sm btn-primary'>編集</button></a>
+              <a href='delete.php?id=<?php echo $post->getId(); ?>'><button type='button' class='btn btn-sm btn-danger'>削除</button></a>
+            </div>
+          <?php } ?>
+        </div> <!-- //col-md-8 -->
+      </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+/*
+div.kadomaru {
+   -moz-border-radius: 20px;    /* Firefox */
+/*   -webkit-border-radius: 20px; /* Safari,Chrome */
+/*   border-radius: 20px;         /* CSS3 */
+
+/*   border: 3px orange solid;     /* 枠線の装飾 */
+/*   background-color: #ccffcc;   /* 背景色 */
+/*}
+*/
+div.kadomaru {
+
+	margin: 30px;
+	padding: 20px;
+   /* ▼CSS3 */
+   border-top-right-radius: 20px;   /* 右上 */
+   border-bottom-left-radius: 20px; /* 左下 */
+
+   /* ▼Safari,Chrome */
+   -webkit-border-top-right-radius: 20px;   /* 右上 */
+   -webkit-border-bottom-left-radius: 20px; /* 左下 */
+
+   /* ▼Firefox */
+   -moz-border-radius-topright: 20px;   /* 右上 */
+   -moz-border-radius-bottomleft: 20px; /* 左下 */
+
+   /* ▼共通装飾 */
+   border: 2px orange solid;     /* 枠線の装飾 */
+   background-color: #fafad2;   /* 背景色 */
+}
+
+div.inputform {
+	margin: 30px;
+	padding: 20px;
+
+	-moz-border-radius: 20px;    /* Firefox */
+	-webkit-border-radius: 20px; /* Safari,Chrome */
+	border-radius: 20px;         /* CSS3 */
+
+	border: 2px orange solid;     /* 枠線の装飾 */
+	background-color: #fafad2;   /* 背景色 */
+}
+
+div.edit {
+	margin: 0 auto;
+	padding: 20px;
+	width: 400px;
+	-moz-border-radius: 20px;    /* Firefox */
+	-webkit-border-radius: 20px; /* Safari,Chrome */
+	border-radius: 20px;         /* CSS3 */
+
+	border: 2px orange solid;     /* 枠線の装飾 */
+	background-color: #fafad2;   /* 背景色 */
+
+}

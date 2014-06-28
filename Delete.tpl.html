@@ -1,0 +1,19 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>掲示板::削除</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+  <div class='alert alert-warning'>本当に削除しますか？</div>
+    <form action="delete.php" method="post">
+      <button type="submit" class='btn btn-sm btn-default'>削除します</button>
+      <input type="hidden" name="id" value="<?=$_GET["id"]?>" />
+    </form>
+    <a href="index.php"><button type='submit' class='btn btn-sm btn-default'>削除しません</button></a>
+  </body>
+</html>
