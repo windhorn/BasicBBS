@@ -115,6 +115,10 @@ public function getAllPosts(){
   $posts = array();
   $mysql = $this->getMysql();
   $allPosts = $mysql->query("SELECT * FROM topics ORDER BY post_date DESC");
+  /*
+  ** 投稿が1つも無いときはnullを返す.
+  */
+  if(!$allPosts) return null;
   foreach($allPosts as $item){
     $post = new Post();
     $post->setId($item['id']);

@@ -28,6 +28,7 @@
           </div>
         </div>
         <div class="col-md-8">
+          <?php if(!$this->posts) exit; //投稿が1つも無い時はexit ?>
           <?php foreach ($this->posts as $post) { ?>
             <div class="kadomaru">
               <p>投稿ID: <?php echo $post->getId(); ?></p>
